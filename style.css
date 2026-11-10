@@ -1,0 +1,354 @@
+/* ==========================================================================
+   TOKENS DE DESIGN SYSTEM - FORTALEZA DE ITAIPU CONNECT
+   ========================================================================== */
+:root {
+    --primary: #1A4524;        /* Verde Escoteiro */
+    --primary-light: #2D6A3F;  /* Verde de Destaque */
+    --secondary: #2980B9;      /* Azul Oceano */
+    --accent: #D35400;         /* Terracota */
+    --highlight: #F1C40F;      /* Amarelo Alerta */
+    --bg-main: #F5F5F7;        /* Cinza Neve */
+    --text-color: #1D1D1F;     /* Carvão */
+    --card-bg: #FFFFFF;        /* Branco */
+    --font-family: 'Inter', system-ui, -apple-system, sans-serif;
+}
+
+*, *::before, *::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: var(--bg-main);
+    color: var(--text-color);
+    font-family: var(--font-family);
+    line-height: 1.6;
+}
+
+.container {
+    width: 90%;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+/* Header & Navegação */
+.header {
+    background-color: var(--primary);
+    padding: 1rem 0;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+}
+
+.header-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo-group {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.logo-frame {
+    width: 48px;
+    height: 48px;
+    background-color: #FFFFFF;
+    border-radius: 50%;
+    border: 2px solid var(--highlight);
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.logo-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.brand-title {
+    color: #FFFFFF;
+    font-size: 1.2rem;
+    font-weight: 700;
+}
+
+.brand-sub {
+    color: var(--highlight);
+    font-size: 0.75rem;
+    display: block;
+}
+
+.nav-menu {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.nav-link {
+    color: #FFFFFF;
+    text-decoration: none;
+    font-weight: 500;
+    transition: opacity 0.2s;
+    white-space: nowrap;
+}
+
+.nav-link:hover {
+    opacity: 0.8;
+}
+
+/* Link da Logo PNG sem fundo */
+.nav-insta-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    background: transparent;
+    padding: 0;
+    margin: 0;
+    text-decoration: none;
+    transition: transform 0.2s ease, opacity 0.2s ease;
+}
+
+.nav-insta-btn:hover {
+    transform: scale(1.15);
+    opacity: 0.9;
+}
+
+.insta-png-img {
+    width: 28px;
+    height: 28px;
+    object-fit: contain;
+    display: block;
+}
+
+/* Hero Section */
+.hero {
+    padding: 4rem 0;
+    background: linear-gradient(180deg, var(--primary) 0%, rgba(26,69,36,0.9) 100%);
+    color: #FFFFFF;
+    text-align: center;
+}
+
+.badge-alert {
+    background-color: transparent;
+    color: #FFFFFF;                 
+    padding: 0;
+    border-radius: 0;
+    font-size: 0.9rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    display: inline-block;
+    margin-bottom: 0.5rem;
+}
+
+.hero h2 {
+    font-size: 2.2rem;
+    font-weight: 700;
+    max-width: 800px;
+    margin: 0 auto 1rem auto;
+}
+
+.hero p {
+    font-size: 1.1rem;
+    max-width: 650px;
+    margin: 0 auto;
+    opacity: 0.9;
+}
+
+/* Seção Sobre */
+.section-sobre {
+    padding: 3.5rem 0 1.5rem 0;
+    background-color: #FFFFFF;
+}
+
+.sobre-content {
+    max-width: 800px;
+    margin: 0 auto;
+    text-align: center;
+    font-size: 1.05rem;
+    line-height: 1.7;
+}
+
+.sobre-content p {
+    margin-bottom: 1.2rem;
+}
+
+/* Seção Galeria de Imagens */
+.section-galeria {
+    padding: 3rem 0 4rem 0;
+    background-color: #FFFFFF;
+}
+
+.section-subtitle {
+    text-align: center;
+    max-width: 600px;
+    margin: -1.5rem auto 2.5rem auto;
+    color: #555;
+    font-size: 1rem;
+}
+
+.gallery-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 24px;
+}
+
+.gallery-card {
+    background-color: var(--bg-main);
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.06);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.gallery-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 20px rgba(0,0,0,0.12);
+}
+
+.img-frame {
+    border: 4px solid var(--primary);
+    border-radius: 8px;
+    margin: 12px;
+    overflow: hidden;
+    background-color: var(--primary);
+}
+
+.gallery-img {
+    width: 100%;
+    height: 220px;
+    object-fit: cover;
+    display: block;
+    transition: transform 0.3s ease;
+}
+
+.gallery-card:hover .gallery-img {
+    transform: scale(1.03);
+}
+
+.gallery-info {
+    padding: 0 16px 16px 16px;
+}
+
+.gallery-info h4 {
+    color: var(--primary);
+    font-size: 1.1rem;
+    margin-bottom: 6px;
+}
+
+.gallery-info p {
+    font-size: 0.9rem;
+    color: #444;
+}
+
+/* Ramos (Cards Grid) */
+.section-ramos {
+    padding: 4rem 0;
+}
+
+.section-title {
+    text-align: center;
+    font-size: 1.8rem;
+    margin-bottom: 2.5rem;
+    color: var(--primary);
+}
+
+.grid-cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+}
+
+.card {
+    background-color: var(--card-bg);
+    padding: 1.5rem;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+    border-top: 4px solid var(--primary);
+}
+
+.card-tag {
+    color: var(--secondary);
+    font-size: 0.85rem;
+    font-weight: 700;
+    margin-bottom: 8px;
+}
+
+.card h3 {
+    margin-bottom: 8px;
+    font-size: 1.3rem;
+}
+
+/* ==========================================================================
+   FOOTER (Rodapé responsivo)
+   ========================================================================== */
+.footer {
+    background-color: var(--primary);
+    color: #FFFFFF;
+    padding: 1.8rem 0;
+    font-size: 0.9rem;
+    text-align: center;
+}
+
+.footer-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.footer-copy {
+    margin: 0;
+    opacity: 0.9;
+}
+
+/* ==========================================================================
+   RESPONSIVIDADE MOBILE
+   ========================================================================== */
+@media (max-width: 768px) {
+    .header-container {
+        flex-direction: column;
+        gap: 12px;
+    }
+
+    /* Menu de navegação lado a lado no celular com fonte levemente reduzida */
+    .nav-menu {
+        width: 100%;
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+        flex-wrap: nowrap;
+        gap: 12px;
+    }
+
+    .nav-link {
+        font-size: 0.82rem;
+    }
+
+    .insta-png-img {
+        width: 22px;
+        height: 22px;
+    }
+
+    .hero h2 {
+        font-size: 1.6rem;
+    }
+
+    .gallery-img {
+        height: 200px;
+    }
+
+    .footer {
+        padding: 1.5rem 1rem;
+    }
+
+    .footer-copy {
+        font-size: 0.85rem;
+        line-height: 1.4;
+    }
+}
